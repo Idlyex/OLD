@@ -1,0 +1,113 @@
+# ══════════════════════════════════════════════════════════════
+#  Trading Configuration — Polymarket SOL Shares
+#  Based on live analysis 2026-05-07 (312 markets, 390K ticks)
+# ══════════════════════════════════════════════════════════════
+
+# --- Active Config ---
+# #1 PnL: xgboost 75% SP≤$0.60 60-100% → 199t, 89.9% WR, $+358, EV $+1.80
+# Alternatives (comment/uncomment to switch):
+#   catboost 95% SP≤$0.60 40-80% → 83t, 94.0% WR (highest WR, fewer trades)
+#   catboost 85% SP≤$0.55 0-100% → 266t, 80.8% WR, $+528 (most trades)
+#   ensemble 90% SP≤$0.60 60-100% → 226t, 81.4% WR, EV $+2.42 (highest EV)
+
+# --- Model ---
+model:
+  source: hermes # binance | hermes — which model set drives entry decisions
+  primary: catboost # xgboost | catboost | rf | ensemble
+  # Alternatives: catboost (94% WR @95% conf), rf (88.3% @75%), ensemble (81.4% @90%)
+  all_models: [catboost, lgbm, rf, xgboost] # loaded for recording + ensemble
+
+# --- Entry Filters ---
+entry:
+  min_confidence: 0.85 # minimum directional probability per tick
+  max_share_price: 0.55 # max share price to buy (ASK price, not mid!)
+  min_share_price: 0.40 # skip cheap shares (SP<$0.40 = death zone, see API eval)
+  min_entry_pct: 0.00 # earliest entry = 0% into market duration
+  max_entry_pct: 0.95 # latest entry
+  max_spread: 0.08 # max bid-ask spread to enter (reject illiquid)
+  min_depth_shares: 20 # minimum ASK depth (shares available) to fill
+
+  # --- Streak Filter (ML impulse gate) ---
+  # Require N consecutive ticks with conf >= min_confidence AND same direction
+  # before allowing entry. Dramatically improves WR + EV:
+  #   3x >=80%: 17 trades, 94.1% WR, $+51 PnL, $3.01 EV
+  #   3x >=85%: 10 trades, 100% WR, $+49 PnL, $4.90 EV
+  streak_required: 2 # consecutive confident ticks needed (1=disabled, 2, 3)
+  streak_interval_s: 5 # max seconds between ticks to keep streak alive
+
+  # --- Gap Momentum Filter ---
+  # Require SOL price to have moved gap_min_pct% in our predicted direction
+  # vs priceToBeat BEFORE entering. Filters noise entries where price hasn't moved.
+  # dir_gap = (sol - ptb) / ptb * 100 (adjusted for direction)
+  #   0.03 = sweet spot: 31t 84% WR EV$+1.86 PnL$+57.7 (all 3 days ✅)
+  #   0.05 = tighter:     28t 82% WR EV$+1.72 PnL$+48.3
+  #   0.00 = disabled (no gap filter)
+  gap_min_pct: 0.03
+
+# --- Order Execution ---
+execution:
+  order_size_usd: 2.85 # USD per trade (scale up after validation)
+  max_open_positions: 5 # concurrent positions
+  use_ask_price: true # ALWAYS use ASK (what you pay), never mid
+  # Price source: ws (WebSocket real-time) or rest (polling every 5s)
+  price_source: ws # ws | rest
+
+# --- Markets ---
+markets:
+  # What to TRADE (real/dry-run orders)
+  trade_slugs:
+    - sol-updown-5m # 5min — ENABLED
+    - sol-updown-15m # 15min — ENABLED
+  trade_durations: [5, 15]
+
+  # What to RECORD (ML snapshots + orderbook for analysis)
+  record_slugs:
+    - sol-updown-5m # 5min — always record
+    - sol-updown-15m # 15min — collect data for future analysis
+  record_durations: [5, 15]
+
+# --- Orderbook WebSocket ---
+orderbook_ws:
+  enabled: true
+  reconnect_base_ms: 1000
+  reconnect_max_ms: 30000
+  subscribe_events: [book, price_change, best_bid_ask]
+  # Updates come ~every 1s. No rate limits (it's a subscription).
+
+# --- State Persistence ---
+persistence:
+  load_trades_on_restart: false # load previous trades/balance on bot restart
+
+# --- Recording ---
+recording:
+  enabled: true
+  tick_interval_s: 5 # record ML predictions every 5s
+  record_all_markets: true # record 0-100% (not just entry window)
+  session_folders: true # each session gets its own folder in results/sessions/
+
+
+# ══════════════════════════════════════════════════════════════
+#  PERFORMANCE REFERENCE — API-VERIFIED (2026-05-11..13, 435 mkts)
+# ══════════════════════════════════════════════════════════════
+#
+#  ACTIVE CONFIG: H_catboost 85% 2x gm0.03 SP$0.40-$0.55
+#  ┌────────────────────────────┬─────┬──────┬────────┬────────┐
+#  │ Config                     │  N  │ WR   │ EV$    │ PnL$   │
+#  ├────────────────────────────┼─────┼──────┼────────┼────────┤
+#  │ H_cat 85% 2x gm0.03 ←ACT │  31 │  84% │ $+1.86 │ $+57.7 │
+#  │ H_cat 85% 2x gm0.05       │  28 │  82% │ $+1.72 │ $+48.3 │
+#  │ B_cat 90% 2x gm0.01       │  19 │  89% │ $+2.28 │ $+43.3 │
+#  │ B_ens 95% 2x no_gap        │  15 │  93% │ $+2.47 │ $+37.1 │
+#  │ H_ens 95% 3x gm0.05       │  15 │  93% │ $+2.43 │ $+36.4 │
+#  └────────────────────────────┴─────┴──────┴────────┴────────┘
+#
+#  Cross-day consistency (only H_catboost = ✅ all 3 days):
+#    Day 1: 12t 92% | Day 2: 1t 100% | Day 3: 18t 78%
+#
+#  Gap momentum deep dive (H_cat 85% 2x, SP≤$0.55, TP$1.00):
+#    no_gap: 45t 71% EV$+1.14 | gm0.03: 31t 84% $+1.86 ← SWEET SPOT
+#    gm0.05: 28t 82% $+1.72  | gm0.10: 13t 92% $+2.33 (too few)
+#
+#  Permutation test: all configs p<0.001 (significantly above chance)
+#  Bonferroni CI: WR 61-94% (corrected for 8 comparisons)
+#  Expected live WR: 65-75% (backtest shrinkage ~10-15pp)

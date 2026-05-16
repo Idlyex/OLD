@@ -1,0 +1,11 @@
+{
+  "tag": "20260503_124616",
+  "timestamp": "2026-05-03T12:46:16.175318",
+  "n_features": 89,
+  "models": [
+    "lgbm_cls",
+    "catboost_cls",
+    "lgbm_reg",
+    "meta"
+  ]
+}

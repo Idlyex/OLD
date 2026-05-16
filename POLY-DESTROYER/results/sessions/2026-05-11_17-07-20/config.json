@@ -1,0 +1,18 @@
+{
+  "session_id": "2026-05-11_17-07-20",
+  "started_at": "2026-05-11T17:07:21.226399",
+  "dry_run": false,
+  "primary_model": "xgboost",
+  "min_confidence": 0.6,
+  "max_share_price": 0.3,
+  "min_share_price": 0.08,
+  "streak_required": 3,
+  "streak_interval_s": 5,
+  "order_size": 2.85,
+  "max_positions": 5,
+  "trade_slugs": [
+    "sol-updown-5m",
+    "sol-updown-15m"
+  ],
+  "entry_window": "0%-95%"
+}

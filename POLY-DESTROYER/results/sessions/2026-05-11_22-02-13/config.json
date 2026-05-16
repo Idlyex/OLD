@@ -1,0 +1,19 @@
+{
+  "session_id": "2026-05-11_22-02-13",
+  "started_at": "2026-05-11T22:02:14.172155",
+  "dry_run": false,
+  "model_source": "binance",
+  "primary_model": "catboost",
+  "min_confidence": 0.85,
+  "max_share_price": 0.55,
+  "min_share_price": 0.08,
+  "streak_required": 2,
+  "streak_interval_s": 5,
+  "order_size": 2.85,
+  "max_positions": 5,
+  "trade_slugs": [
+    "sol-updown-5m",
+    "sol-updown-15m"
+  ],
+  "entry_window": "0%-95%"
+}

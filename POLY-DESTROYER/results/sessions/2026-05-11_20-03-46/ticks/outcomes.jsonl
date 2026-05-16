@@ -1,0 +1,5 @@
+{"ts": 1778519108.365, "slug": "sol-updown-5m-1778518800", "outcome": "DOWN", "sol_start": 97.3126, "sol_end": 97.195, "ptb": 97.3126, "dur_min": 5}
+{"ts": 1778519405.935, "slug": "sol-updown-5m-1778519100", "outcome": "DOWN", "sol_start": 97.2029, "sol_end": 97.07, "ptb": 97.2029, "dur_min": 5}
+{"ts": 1778519703.935, "slug": "sol-updown-15m-1778518800", "outcome": "DOWN", "sol_start": 97.3126, "sol_end": 97.1558, "ptb": 97.3126, "dur_min": 15}
+{"ts": 1778519703.937, "slug": "sol-updown-5m-1778519400", "outcome": "UP", "sol_start": 97.1041, "sol_end": 97.1558, "ptb": 97.1041, "dur_min": 5}
+{"ts": 1778520004.095, "slug": "sol-updown-5m-1778519700", "outcome": "UP", "sol_start": 97.1558, "sol_end": 97.4214, "ptb": 97.1558, "dur_min": 5}

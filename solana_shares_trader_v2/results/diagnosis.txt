@@ -1,0 +1,18 @@
+  Loaded live_ticks_2026-05-09.jsonl: 7639 ticks, 103 markets
+  Loaded live_ticks_2026-05-10.jsonl: 8302 ticks, 100 markets
+  Total: 15321 ticks, 193 markets with outcomes
+
+====================================================================================================
+  SECTION 1: FORENSICS ? Each live trade vs tick data predictions
+  What did ALL models say at the EXACT moment of entry + at peak confidence?
+====================================================================================================
+
+  [sol-updown-5m-1778340600] 2026-05-09 18:34:29
+Traceback (most recent call last):
+  File "D:\AF\solana_shares_trader_v2\diagnose_live_losses.py", line 79, in <module>
+    print(f"    Live: dir={trade['direction']} conf={trade['confidence']:.3f} price=${trade['entry_price']:.4f} \u2192 {wl} ${pnl:+.2f}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 44: character maps to <undefined>

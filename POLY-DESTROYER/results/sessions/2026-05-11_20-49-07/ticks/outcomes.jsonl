@@ -1,0 +1,12 @@
+{"ts": 1778521804.167, "slug": "sol-updown-5m-1778521500", "outcome": "DOWN", "sol_start": 97.8012, "sol_end": 97.725, "ptb": 97.8012, "dur_min": 5}
+{"ts": 1778522104.178, "slug": "sol-updown-5m-1778521800", "outcome": "UP", "sol_start": 97.725, "sol_end": 97.7653, "ptb": 97.725, "dur_min": 5}
+{"ts": 1778522404.844, "slug": "sol-updown-15m-1778521500", "outcome": "DOWN", "sol_start": 97.8012, "sol_end": 97.7498, "ptb": 97.8012, "dur_min": 15}
+{"ts": 1778522404.845, "slug": "sol-updown-5m-1778522100", "outcome": "UP", "sol_start": 97.7471, "sol_end": 97.7498, "ptb": 97.7471, "dur_min": 5}
+{"ts": 1778522704.823, "slug": "sol-updown-5m-1778522400", "outcome": "UP", "sol_start": 97.7498, "sol_end": 97.915, "ptb": 97.7498, "dur_min": 5}
+{"ts": 1778523004.574, "slug": "sol-updown-5m-1778522700", "outcome": "DOWN", "sol_start": 97.9172, "sol_end": 97.8, "ptb": 97.9172, "dur_min": 5}
+{"ts": 1778523303.117, "slug": "sol-updown-15m-1778522400", "outcome": "DOWN", "sol_start": 97.7498, "sol_end": 97.5354, "ptb": 97.7498, "dur_min": 15}
+{"ts": 1778523303.119, "slug": "sol-updown-5m-1778523000", "outcome": "DOWN", "sol_start": 97.8297, "sol_end": 97.5354, "ptb": 97.8297, "dur_min": 5}
+{"ts": 1778523603.442, "slug": "sol-updown-5m-1778523300", "outcome": "DOWN", "sol_start": 97.5354, "sol_end": 97.4076, "ptb": 97.5354, "dur_min": 5}
+{"ts": 1778523905.877, "slug": "sol-updown-5m-1778523600", "outcome": "UP", "sol_start": 97.4076, "sol_end": 97.4294, "ptb": 97.4076, "dur_min": 5}
+{"ts": 1778524206.931, "slug": "sol-updown-15m-1778523300", "outcome": "UP", "sol_start": 97.5354, "sol_end": 97.5444, "ptb": 97.5354, "dur_min": 15}
+{"ts": 1778524206.932, "slug": "sol-updown-5m-1778523900", "outcome": "UP", "sol_start": 97.4388, "sol_end": 97.5444, "ptb": 97.4388, "dur_min": 5}

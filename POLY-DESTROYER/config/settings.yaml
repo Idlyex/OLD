@@ -1,0 +1,42 @@
+# ══════════════════════════════════════════════════════════════
+#  Solana Shares Trader v2 — System Configuration
+#  Trading config is in config/trading.yaml
+# ══════════════════════════════════════════════════════════════
+
+# --- Mode ---
+mode: live
+dry_run: false  # overridden by .env DRY_RUN if set
+
+# --- Infrastructure ---
+infrastructure:
+  polymarket:
+    clob_host: https://clob.polymarket.com
+    gamma_host: https://gamma-api.polymarket.com
+    chain_id: 137
+    ws_market_url: wss://ws-subscriptions-clob.polymarket.com/ws/market
+    ws_user_url: wss://ws-subscriptions-clob.polymarket.com/ws/user
+
+  binance:
+    ws_url: wss://fstream.binancefuture.com
+    rest_url: https://fapi.binance.com
+    symbols: [SOLUSDT]
+    kline_intervals: [1m]
+    max_klines: 120
+
+  data:
+    models_dir: data/models
+    results_dir: results
+
+# --- Logging ---
+logging:
+  level: INFO
+  file: logs/trader.log
+  rotation: 10 MB
+  retention: 30 days
+
+# --- Debug ---
+debug:
+  features: false
+  orderbook: false
+  models: false
+  execution: false

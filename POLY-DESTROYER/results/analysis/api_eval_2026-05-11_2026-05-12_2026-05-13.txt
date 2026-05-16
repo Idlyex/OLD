@@ -1,0 +1,252 @@
+====================================================================================================
+  RIGOROUS CONFIG EVALUATION — API-verified outcomes
+  Data: ticks_2026-05-11, ticks_2026-05-12, ticks_2026-05-13
+  Markets with API outcomes: 435
+  Configs with N≥5: 3572
+====================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  TOP 50 CONFIGS (sorted by Wilson lower bound)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  Model                  Conf   SP≤ Str Gap                 N   W   L   WR% WilLo    EV$    PnL$
+  B_ensemble             0.95 $0.55   3x gap_min_0.05       11  11   0 100.0  74.1  +2.78   +30.6
+  H_ensemble             0.95 $0.55   3x gap_min_0.05       15  14   1  93.3  70.2  +2.43   +36.4
+  B_catboost             0.85 $0.50   3x gap_min_0.05        9   9   0 100.0  70.1  +2.86   +25.8
+  B_catboost             0.90 $0.50   2x gap_min_0.05        9   9   0 100.0  70.1  +2.86   +25.8
+  B_ensemble             0.95 $0.50   2x gap_min_0.05        9   9   0 100.0  70.1  +2.86   +25.8
+  H_ensemble             0.95 $0.50   3x gap_min_0.05        9   9   0 100.0  70.1  +2.86   +25.8
+  H_catboost             0.90 $0.50   3x gap_min_0.05        8   8   0 100.0  67.6  +2.86   +22.9
+  B_catboost             0.90 $0.50   3x gap_min_0.05        8   8   0 100.0  67.6  +2.85   +22.8
+  B_ensemble             0.95 $0.50   3x gap_min_0.05        8   8   0 100.0  67.6  +2.85   +22.8
+  B_ensemble             0.95 $0.55   2x gap_min_0.05       13  12   1  92.3  66.7  +2.36   +30.7
+  B_catboost             0.90 $0.55   2x gap_min_0.02       17  15   2  88.2  65.7  +2.19   +37.3
+  B_catboost             0.90 $0.55   3x gap_min_0.05       12  11   1  91.7  64.6  +2.31   +27.7
+  H_catboost             0.85 $0.55   2x gap_min_0.05       28  23   5  82.1  64.4  +1.72   +48.3
+  B_ensemble             0.95 $0.55   2x no_filter          16  14   2  87.5  64.0  +2.14   +34.2
+  B_ensemble             0.95 $0.55   2x gap_max_0.05       16  14   2  87.5  64.0  +2.14   +34.2
+  B_ensemble             0.95 $0.55   2x gap_max_0.02       16  14   2  87.5  64.0  +2.14   +34.2
+  B_ensemble             0.95 $0.55   2x only_for_us        16  14   2  87.5  64.0  +2.14   +34.2
+  H_ensemble             0.95 $0.55   2x gap_min_0.05       16  14   2  87.5  64.0  +2.08   +33.2
+  H_catboost             0.80 $0.55   2x gap_min_0.05       31  25   6  80.6  63.7  +1.65   +51.0
+  H_ensemble             0.95 $0.55   2x no_filter          19  16   3  84.2  62.4  +1.99   +37.8
+  H_ensemble             0.95 $0.55   2x gap_max_0.05       19  16   3  84.2  62.4  +1.99   +37.8
+  H_ensemble             0.95 $0.55   2x gap_max_0.02       19  16   3  84.2  62.4  +1.99   +37.8
+  H_ensemble             0.95 $0.55   2x only_for_us        19  16   3  84.2  62.4  +1.99   +37.8
+  H_ensemble             0.95 $0.55   2x gap_min_0.02       19  16   3  84.2  62.4  +1.99   +37.8
+  B_ensemble             0.95 $0.50   2x no_filter          11  10   1  90.9  62.3  +2.41   +26.5
+  B_ensemble             0.95 $0.50   2x gap_max_0.05       11  10   1  90.9  62.3  +2.41   +26.5
+  B_ensemble             0.95 $0.50   2x gap_max_0.02       11  10   1  90.9  62.3  +2.41   +26.5
+  B_ensemble             0.95 $0.50   2x only_for_us        11  10   1  90.9  62.3  +2.41   +26.5
+  H_catboost             0.90 $0.50   2x gap_min_0.05       11  10   1  90.9  62.3  +2.38   +26.1
+  B_catboost             0.75 $0.55   2x gap_min_0.05       33  26   7  78.8  62.2  +1.54   +50.9
+  B_ensemble             0.95 $0.55   2x gap_min_0.02       15  13   2  86.7  62.1  +2.04   +30.6
+  B_ensemble             0.95 $0.55   3x no_filter          15  13   2  86.7  62.1  +2.04   +30.6
+  B_ensemble             0.95 $0.55   3x gap_max_0.05       15  13   2  86.7  62.1  +2.04   +30.6
+  B_ensemble             0.95 $0.55   3x gap_max_0.02       15  13   2  86.7  62.1  +2.04   +30.6
+  B_ensemble             0.95 $0.55   3x only_for_us        15  13   2  86.7  62.1  +2.04   +30.6
+  B_ensemble             0.95 $0.55   3x gap_min_0.02       15  13   2  86.7  62.1  +2.04   +30.6
+  H_lgbm                 0.65 $0.55   3x gap_min_0.05       36  28   8  77.8  61.9  +1.43   +51.4
+  B_catboost             0.80 $0.55   2x gap_min_0.05       29  23   6  79.3  61.6  +1.58   +46.0
+  B_catboost             0.85 $0.55   3x gap_min_0.05       18  15   3  83.3  60.8  +1.82   +32.7
+  B_lgbm                 0.90 $0.55   2x gap_min_0.05       31  24   7  77.4  60.2  +1.52   +47.0
+  B_catboost             0.90 $0.55   2x gap_min_0.05       14  12   2  85.7  60.1  +1.99   +27.9
+  B_catboost             0.90 $0.55   3x no_filter          14  12   2  85.7  60.1  +1.97   +27.6
+  B_catboost             0.90 $0.55   3x gap_max_0.05       14  12   2  85.7  60.1  +1.97   +27.6
+  B_catboost             0.90 $0.55   3x gap_max_0.02       14  12   2  85.7  60.1  +1.97   +27.6
+  B_catboost             0.90 $0.55   3x only_for_us        14  12   2  85.7  60.1  +1.97   +27.6
+  B_catboost             0.90 $0.55   3x gap_min_0.02       14  12   2  85.7  60.1  +1.97   +27.6
+  H_catboost             0.70 $0.55   3x gap_min_0.05       34  26   8  76.5  60.0  +1.36   +46.2
+  B_catboost             0.90 $0.55   2x no_filter          21  17   4  81.0  60.0  +1.79   +37.6
+  B_catboost             0.90 $0.55   2x gap_max_0.05       21  17   4  81.0  60.0  +1.79   +37.6
+  B_catboost             0.90 $0.55   2x gap_max_0.02       21  17   4  81.0  60.0  +1.79   +37.6
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  BEST PER MODEL (N≥15, sorted by Wilson lower bound)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  H_ensemble             conf≥0.95 SP≤$0.55 str3x gap_min_0.05     N= 15 14W-1L WR=93% WilLo=70% EV=$+2.43 PnL=$+36.4
+  B_catboost             conf≥0.90 SP≤$0.55 str2x gap_min_0.02     N= 17 15W-2L WR=88% WilLo=66% EV=$+2.19 PnL=$+37.3
+  H_catboost             conf≥0.85 SP≤$0.55 str2x gap_min_0.05     N= 28 23W-5L WR=82% WilLo=64% EV=$+1.72 PnL=$+48.3
+  B_ensemble             conf≥0.95 SP≤$0.55 str2x no_filter        N= 16 14W-2L WR=88% WilLo=64% EV=$+2.14 PnL=$+34.2
+  H_lgbm                 conf≥0.65 SP≤$0.55 str3x gap_min_0.05     N= 36 28W-8L WR=78% WilLo=62% EV=$+1.43 PnL=$+51.4
+  B_lgbm                 conf≥0.90 SP≤$0.55 str2x gap_min_0.05     N= 31 24W-7L WR=77% WilLo=60% EV=$+1.52 PnL=$+47.0
+  H_xgboost              conf≥0.55 SP≤$0.55 str3x gap_min_0.05     N= 37 28W-9L WR=76% WilLo=60% EV=$+1.32 PnL=$+49.0
+  B_xgboost              conf≥0.80 SP≤$0.55 str3x gap_min_0.05     N= 29 22W-7L WR=76% WilLo=58% EV=$+1.36 PnL=$+39.5
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  CONFIDENCE BREAKDOWN (no_filter, 1x streak, SP≤$0.55)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  B_catboost:
+    conf≥0.75: N= 228 124W-104L WR=54% WilLo=48% EV=$+0.28 PnL=$+62.7
+    conf≥0.70: N= 277 148W-129L WR=53% WilLo=48% EV=$+0.22 PnL=$+60.6
+    conf≥0.65: N= 344 181W-163L WR=53% WilLo=47% EV=$+0.12 PnL=$+42.2
+    conf≥0.60: N= 377 196W-181L WR=52% WilLo=47% EV=$+0.09 PnL=$+33.3
+    conf≥0.80: N= 184 97W-87L WR=53% WilLo=46% EV=$+0.19 PnL=$+34.5
+    conf≥0.55: N= 398 199W-199L WR=50% WilLo=45% EV=$-0.06 PnL=$-24.2
+    conf≥0.85: N= 146 77W-69L WR=53% WilLo=45% EV=$+0.24 PnL=$+35.2
+    conf≥0.90: N=  75 38W-37L WR=51% WilLo=40% EV=$+0.15 PnL=$+11.3
+
+  B_xgboost:
+    conf≥0.85: N= 279 158W-121L WR=57% WilLo=51% EV=$+0.36 PnL=$+101.5
+    conf≥0.80: N= 330 183W-147L WR=55% WilLo=50% EV=$+0.29 PnL=$+95.0
+    conf≥0.90: N= 227 128W-99L WR=56% WilLo=50% EV=$+0.42 PnL=$+96.1
+    conf≥0.75: N= 350 189W-161L WR=54% WilLo=49% EV=$+0.17 PnL=$+60.3
+    conf≥0.65: N= 393 206W-187L WR=52% WilLo=47% EV=$+0.09 PnL=$+35.2
+    conf≥0.70: N= 368 190W-178L WR=52% WilLo=47% EV=$+0.04 PnL=$+15.0
+    conf≥0.60: N= 400 205W-195L WR=51% WilLo=46% EV=$+0.03 PnL=$+12.7
+    conf≥0.55: N= 410 208W-202L WR=51% WilLo=46% EV=$+0.00 PnL=$+0.3
+    conf≥0.95: N= 148 77W-71L WR=52% WilLo=44% EV=$+0.23 PnL=$+34.6
+
+  B_lgbm:
+    conf≥0.75: N= 326 185W-141L WR=57% WilLo=51% EV=$+0.37 PnL=$+122.1
+    conf≥0.65: N= 383 215W-168L WR=56% WilLo=51% EV=$+0.31 PnL=$+120.2
+    conf≥0.60: N= 395 221W-174L WR=56% WilLo=51% EV=$+0.29 PnL=$+113.5
+    conf≥0.70: N= 354 199W-155L WR=56% WilLo=51% EV=$+0.33 PnL=$+116.6
+    conf≥0.80: N= 283 158W-125L WR=56% WilLo=50% EV=$+0.32 PnL=$+89.3
+    conf≥0.90: N= 180 103W-77L WR=57% WilLo=50% EV=$+0.48 PnL=$+86.2
+    conf≥0.85: N= 227 127W-100L WR=56% WilLo=49% EV=$+0.40 PnL=$+90.5
+    conf≥0.55: N= 406 219W-187L WR=54% WilLo=49% EV=$+0.17 PnL=$+67.1
+    conf≥0.95: N= 120 66W-54L WR=55% WilLo=46% EV=$+0.31 PnL=$+37.0
+
+  B_ensemble:
+    conf≥0.75: N= 305 172W-133L WR=56% WilLo=51% EV=$+0.36 PnL=$+109.2
+    conf≥0.80: N= 257 146W-111L WR=57% WilLo=51% EV=$+0.40 PnL=$+103.6
+    conf≥0.65: N= 370 205W-165L WR=55% WilLo=50% EV=$+0.27 PnL=$+99.4
+    conf≥0.70: N= 340 189W-151L WR=56% WilLo=50% EV=$+0.29 PnL=$+99.0
+    conf≥0.85: N= 193 108W-85L WR=56% WilLo=49% EV=$+0.46 PnL=$+89.7
+    conf≥0.60: N= 390 205W-185L WR=53% WilLo=48% EV=$+0.08 PnL=$+32.2
+    conf≥0.55: N= 403 206W-197L WR=51% WilLo=46% EV=$+0.01 PnL=$+3.3
+    conf≥0.90: N= 142 73W-69L WR=51% WilLo=43% EV=$+0.21 PnL=$+29.6
+    conf≥0.95: N=  64 35W-29L WR=55% WilLo=43% EV=$+0.40 PnL=$+25.9
+
+  H_catboost:
+    conf≥0.65: N= 358 192W-166L WR=54% WilLo=48% EV=$+0.16 PnL=$+58.4
+    conf≥0.80: N= 198 109W-89L WR=55% WilLo=48% EV=$+0.32 PnL=$+63.8
+    conf≥0.75: N= 243 132W-111L WR=54% WilLo=48% EV=$+0.27 PnL=$+66.4
+    conf≥0.60: N= 385 204W-181L WR=53% WilLo=48% EV=$+0.14 PnL=$+54.9
+    conf≥0.70: N= 310 160W-150L WR=52% WilLo=46% EV=$+0.06 PnL=$+17.4
+    conf≥0.55: N= 401 201W-200L WR=50% WilLo=45% EV=$-0.05 PnL=$-18.1
+    conf≥0.85: N= 162 85W-77L WR=52% WilLo=45% EV=$+0.19 PnL=$+30.2
+    conf≥0.90: N= 108 57W-51L WR=53% WilLo=43% EV=$+0.22 PnL=$+23.5
+    conf≥0.95: N=  23 13W-10L WR=57% WilLo=37% EV=$+0.49 PnL=$+11.2
+
+  H_xgboost:
+    conf≥0.90: N= 189 104W-85L WR=55% WilLo=48% EV=$+0.34 PnL=$+64.1
+    conf≥0.85: N= 258 132W-126L WR=51% WilLo=45% EV=$+0.10 PnL=$+25.9
+    conf≥0.65: N= 384 190W-194L WR=49% WilLo=45% EV=$-0.05 PnL=$-19.6
+    conf≥0.70: N= 358 177W-181L WR=49% WilLo=44% EV=$-0.03 PnL=$-9.6
+    conf≥0.75: N= 332 162W-170L WR=49% WilLo=43% EV=$-0.09 PnL=$-29.4
+    conf≥0.60: N= 400 192W-208L WR=48% WilLo=43% EV=$-0.15 PnL=$-59.4
+    conf≥0.80: N= 299 145W-154L WR=48% WilLo=43% EV=$-0.08 PnL=$-23.6
+    conf≥0.95: N= 114 59W-55L WR=52% WilLo=43% EV=$+0.23 PnL=$+26.5
+    conf≥0.55: N= 407 192W-215L WR=47% WilLo=42% EV=$-0.20 PnL=$-80.2
+
+  H_lgbm:
+    conf≥0.75: N= 298 167W-131L WR=56% WilLo=50% EV=$+0.31 PnL=$+92.5
+    conf≥0.85: N= 224 127W-97L WR=57% WilLo=50% EV=$+0.39 PnL=$+86.5
+    conf≥0.80: N= 264 148W-116L WR=56% WilLo=50% EV=$+0.33 PnL=$+87.4
+    conf≥0.65: N= 374 203W-171L WR=54% WilLo=49% EV=$+0.19 PnL=$+69.5
+    conf≥0.60: N= 392 210W-182L WR=54% WilLo=49% EV=$+0.16 PnL=$+61.9
+    conf≥0.70: N= 352 187W-165L WR=53% WilLo=48% EV=$+0.14 PnL=$+48.4
+    conf≥0.55: N= 403 208W-195L WR=52% WilLo=47% EV=$+0.05 PnL=$+21.1
+    conf≥0.95: N= 117 65W-52L WR=56% WilLo=47% EV=$+0.40 PnL=$+46.6
+    conf≥0.90: N= 172 89W-83L WR=52% WilLo=44% EV=$+0.14 PnL=$+24.2
+
+  H_ensemble:
+    conf≥0.70: N= 340 187W-153L WR=55% WilLo=50% EV=$+0.26 PnL=$+87.7
+    conf≥0.65: N= 364 191W-173L WR=52% WilLo=47% EV=$+0.10 PnL=$+36.1
+    conf≥0.80: N= 242 129W-113L WR=53% WilLo=47% EV=$+0.21 PnL=$+50.4
+    conf≥0.60: N= 385 200W-185L WR=52% WilLo=47% EV=$+0.06 PnL=$+24.4
+    conf≥0.90: N= 134 74W-60L WR=55% WilLo=47% EV=$+0.38 PnL=$+51.2
+    conf≥0.75: N= 292 153W-139L WR=52% WilLo=47% EV=$+0.12 PnL=$+36.5
+    conf≥0.55: N= 404 208W-196L WR=51% WilLo=47% EV=$+0.03 PnL=$+12.5
+    conf≥0.95: N=  76 43W-33L WR=57% WilLo=45% EV=$+0.51 PnL=$+39.1
+    conf≥0.85: N= 184 94W-90L WR=51% WilLo=44% EV=$+0.15 PnL=$+26.9
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  SHARE PRICE ANALYSIS (no_filter, 1x streak)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  H_catboost:
+    conf≥0.70 | SP≤$0.30:  29t WR=24% EV$-0.03  |  SP≤$0.40:  75t WR=33% EV$+0.02  |  SP≤$0.50: 217t WR=46% EV$-0.01  |  SP≤$0.55: 310t WR=52% EV$+0.06
+    conf≥0.80 | SP≤$0.30:  19t WR=11% EV$-1.48  |  SP≤$0.40:  49t WR=31% EV$-0.32  |  SP≤$0.50: 143t WR=46% EV$+0.04  |  SP≤$0.55: 198t WR=55% EV$+0.32
+    conf≥0.85 | SP≤$0.30:  17t WR=12% EV$-1.32  |  SP≤$0.40:  39t WR=23% EV$-0.84  |  SP≤$0.50: 117t WR=46% EV$-0.00  |  SP≤$0.55: 162t WR=52% EV$+0.19
+    conf≥0.90 | SP≤$0.30:   9t WR=11% EV$-1.47  |  SP≤$0.40:  19t WR=21% EV$-1.03  |  SP≤$0.50:  76t WR=50% EV$+0.23  |  SP≤$0.55: 108t WR=53% EV$+0.22
+
+  B_catboost:
+    conf≥0.70 | SP≤$0.30:  28t WR=25% EV$+0.07  |  SP≤$0.40:  69t WR=38% EV$+0.36  |  SP≤$0.50: 199t WR=53% EV$+0.44  |  SP≤$0.55: 277t WR=53% EV$+0.22
+    conf≥0.80 | SP≤$0.30:  19t WR=16% EV$-0.98  |  SP≤$0.40:  45t WR=29% EV$-0.40  |  SP≤$0.50: 134t WR=45% EV$-0.05  |  SP≤$0.55: 184t WR=53% EV$+0.19
+    conf≥0.85 | SP≤$0.30:  14t WR=14% EV$-1.00  |  SP≤$0.40:  34t WR=26% EV$-0.55  |  SP≤$0.50: 108t WR=47% EV$+0.09  |  SP≤$0.55: 146t WR=53% EV$+0.24
+    conf≥0.90 | SP≤$0.30:   8t WR=12% EV$-1.30  |  SP≤$0.40:  18t WR=17% EV$-1.35  |  SP≤$0.50:  56t WR=48% EV$+0.15  |  SP≤$0.55:  75t WR=51% EV$+0.15
+
+  H_ensemble:
+    conf≥0.70 | SP≤$0.30:  29t WR=21% EV$-0.43  |  SP≤$0.40:  77t WR=35% EV$+0.12  |  SP≤$0.50: 233t WR=48% EV$+0.11  |  SP≤$0.55: 340t WR=55% EV$+0.26
+    conf≥0.80 | SP≤$0.30:  20t WR=25% EV$+0.17  |  SP≤$0.40:  55t WR=38% EV$+0.44  |  SP≤$0.50: 163t WR=45% EV$+0.02  |  SP≤$0.55: 242t WR=53% EV$+0.21
+    conf≥0.85 | SP≤$0.30:  17t WR=24% EV$-0.09  |  SP≤$0.40:  41t WR=37% EV$+0.30  |  SP≤$0.50: 130t WR=46% EV$+0.10  |  SP≤$0.55: 184t WR=51% EV$+0.15
+    conf≥0.90 | SP≤$0.30:  11t WR=9% EV$-1.72  |  SP≤$0.40:  29t WR=24% EV$-0.89  |  SP≤$0.50:  96t WR=49% EV$+0.21  |  SP≤$0.55: 134t WR=55% EV$+0.38
+
+  B_ensemble:
+    conf≥0.70 | SP≤$0.30:  28t WR=18% EV$-0.69  |  SP≤$0.40:  79t WR=37% EV$+0.16  |  SP≤$0.50: 237t WR=51% EV$+0.25  |  SP≤$0.55: 340t WR=56% EV$+0.29
+    conf≥0.80 | SP≤$0.30:  20t WR=25% EV$+0.17  |  SP≤$0.40:  59t WR=36% EV$+0.20  |  SP≤$0.50: 174t WR=51% EV$+0.31  |  SP≤$0.55: 257t WR=57% EV$+0.40
+    conf≥0.85 | SP≤$0.30:  17t WR=24% EV$+0.03  |  SP≤$0.40:  42t WR=36% EV$+0.29  |  SP≤$0.50: 137t WR=51% EV$+0.44  |  SP≤$0.55: 193t WR=56% EV$+0.46
+    conf≥0.90 | SP≤$0.30:  13t WR=23% EV$-0.12  |  SP≤$0.40:  30t WR=33% EV$+0.09  |  SP≤$0.50: 102t WR=47% EV$+0.18  |  SP≤$0.55: 142t WR=51% EV$+0.21
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  STREAK COMPARISON (no_filter, SP≤$0.55)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  H_catboost:
+    conf≥0.70 | 1x: 310t WR=52% EV$+0.06  |  2x: 154t WR=54% EV$+0.13  |  3x:  99t WR=56% EV$+0.24
+    conf≥0.80 | 1x: 198t WR=55% EV$+0.32  |  2x:  67t WR=61% EV$+0.60  |  3x:  48t WR=60% EV$+0.55
+    conf≥0.85 | 1x: 162t WR=52% EV$+0.19  |  2x:  50t WR=64% EV$+0.79  |  3x:  30t WR=67% EV$+0.94
+
+  B_catboost:
+    conf≥0.70 | 1x: 277t WR=53% EV$+0.22  |  2x: 129t WR=59% EV$+0.46  |  3x:  81t WR=57% EV$+0.37
+    conf≥0.80 | 1x: 184t WR=53% EV$+0.19  |  2x:  62t WR=60% EV$+0.49  |  3x:  42t WR=60% EV$+0.54
+    conf≥0.85 | 1x: 146t WR=53% EV$+0.24  |  2x:  35t WR=66% EV$+0.87  |  3x:  24t WR=75% EV$+1.41
+
+  H_ensemble:
+    conf≥0.70 | 1x: 340t WR=55% EV$+0.26  |  2x: 189t WR=51% EV$-0.05  |  3x: 117t WR=52% EV$+0.04
+    conf≥0.80 | 1x: 242t WR=53% EV$+0.21  |  2x:  83t WR=54% EV$+0.19  |  3x:  55t WR=62% EV$+0.66
+    conf≥0.85 | 1x: 184t WR=51% EV$+0.15  |  2x:  53t WR=58% EV$+0.48  |  3x:  35t WR=63% EV$+0.68
+
+  B_ensemble:
+    conf≥0.70 | 1x: 340t WR=56% EV$+0.29  |  2x: 204t WR=56% EV$+0.25  |  3x: 120t WR=55% EV$+0.21
+    conf≥0.80 | 1x: 257t WR=57% EV$+0.40  |  2x:  97t WR=59% EV$+0.42  |  3x:  58t WR=67% EV$+0.98
+    conf≥0.85 | 1x: 193t WR=56% EV$+0.46  |  2x:  56t WR=64% EV$+0.73  |  3x:  34t WR=68% EV$+0.96
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  GAP FILTER IMPACT (1x streak, SP≤$0.55)
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  H_catboost conf≥0.85:
+    no_filter         : N=162 WR=52% EV=$+0.19 PnL=$+30.2
+    gap_max_0.05      : N=162 WR=52% EV=$+0.19 PnL=$+30.2
+    gap_max_0.02      : N=162 WR=52% EV=$+0.19 PnL=$+30.2
+    only_for_us       : N=162 WR=52% EV=$+0.19 PnL=$+30.2
+    gap_min_0.02      : N=135 WR=56% EV=$+0.34 PnL=$+45.3
+    gap_min_0.05      : N= 56 WR=64% EV=$+0.73 PnL=$+40.8
+
+  B_catboost conf≥0.85:
+    no_filter         : N=146 WR=53% EV=$+0.24 PnL=$+35.2
+    gap_max_0.05      : N=146 WR=53% EV=$+0.24 PnL=$+35.2
+    gap_max_0.02      : N=146 WR=53% EV=$+0.24 PnL=$+35.2
+    only_for_us       : N=146 WR=53% EV=$+0.24 PnL=$+35.2
+    gap_min_0.02      : N=119 WR=57% EV=$+0.44 PnL=$+52.6
+    gap_min_0.05      : N= 49 WR=65% EV=$+0.82 PnL=$+40.2
+
+  H_ensemble conf≥0.85:
+    no_filter         : N=184 WR=51% EV=$+0.15 PnL=$+26.9
+    gap_max_0.05      : N=184 WR=51% EV=$+0.15 PnL=$+26.9
+    gap_max_0.02      : N=184 WR=51% EV=$+0.15 PnL=$+26.9
+    only_for_us       : N=184 WR=51% EV=$+0.15 PnL=$+26.9
+    gap_min_0.02      : N=164 WR=52% EV=$+0.09 PnL=$+14.2
+    gap_min_0.05      : N= 76 WR=61% EV=$+0.50 PnL=$+38.0
+
+  B_ensemble conf≥0.85:
+    no_filter         : N=193 WR=56% EV=$+0.46 PnL=$+89.7
+    gap_max_0.05      : N=193 WR=56% EV=$+0.46 PnL=$+89.7
+    gap_max_0.02      : N=193 WR=56% EV=$+0.46 PnL=$+89.7
+    only_for_us       : N=193 WR=56% EV=$+0.46 PnL=$+89.7
+    gap_min_0.02      : N=175 WR=55% EV=$+0.29 PnL=$+51.2
+    gap_min_0.05      : N= 74 WR=62% EV=$+0.62 PnL=$+46.0

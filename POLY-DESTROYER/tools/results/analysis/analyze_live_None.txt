@@ -1,0 +1,5 @@
+##############################################################################
+  POLY-DESTROYER -- Exhaustive Live Analysis (no lookahead)
+  Date: None | Bet: $2.85 | Output: results\analysis\analyze_live_None.txt
+##############################################################################
+  [X] No ticks!

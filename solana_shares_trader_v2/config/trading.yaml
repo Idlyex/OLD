@@ -1,0 +1,87 @@
+# ══════════════════════════════════════════════════════════════
+#  Trading Configuration — Polymarket SOL Shares
+#  Based on live analysis 2026-05-07 (312 markets, 390K ticks)
+# ══════════════════════════════════════════════════════════════
+
+# --- Active Config ---
+# #1 PnL: xgboost 75% SP≤$0.60 60-100% → 199t, 89.9% WR, $+358, EV $+1.80
+# Alternatives (comment/uncomment to switch):
+#   catboost 95% SP≤$0.60 40-80% → 83t, 94.0% WR (highest WR, fewer trades)
+#   catboost 85% SP≤$0.55 0-100% → 266t, 80.8% WR, $+528 (most trades)
+#   ensemble 90% SP≤$0.60 60-100% → 226t, 81.4% WR, EV $+2.42 (highest EV)
+
+# --- Model ---
+model:
+  primary: catboost           # xgboost | catboost | rf | ensemble
+  # Alternatives: catboost (94% WR @95% conf), rf (88.3% @75%), ensemble (81.4% @90%)
+  all_models: [catboost, lgbm, rf, xgboost]  # loaded for recording + ensemble
+
+# --- Entry Filters ---
+entry:
+  min_confidence: 0.7       # minimum directional probability (75% = sweet spot)
+  max_share_price: 0.55    # max share price to buy (ASK price, not mid!)
+  min_share_price: 0.10      # skip extreme cheap shares (noise)
+  min_entry_pct: 0.4        # earliest entry = 60% into market duration
+  max_entry_pct: 0.92        # latest entry (60-100% timing = proven best)
+  min_depth_shares: 20       # minimum ASK depth (shares available) to fill
+  max_spread: 0.08           # max bid-ask spread to enter (reject illiquid)
+
+# --- Order Execution ---
+execution:
+  order_size_usd: 2.85       # USD per trade (scale up after validation)
+  max_open_positions: 5      # concurrent positions
+  use_ask_price: true        # ALWAYS use ASK (what you pay), never mid
+  # Price source: ws (WebSocket real-time) or rest (polling every 5s)
+  price_source: ws           # ws | rest
+
+# --- Markets ---
+markets:
+  # What to TRADE (real/dry-run orders)
+  trade_slugs:
+    - sol-updown-5m          # 5min — ENABLED
+    - sol-updown-15m         # 15min — ENABLED
+  trade_durations: [5, 15]
+
+  # What to RECORD (ML snapshots + orderbook for analysis)
+  record_slugs:
+    - sol-updown-5m          # 5min — always record
+    - sol-updown-15m         # 15min — collect data for future analysis
+  record_durations: [5, 15]
+
+# --- Orderbook WebSocket ---
+orderbook_ws:
+  enabled: true
+  reconnect_base_ms: 1000
+  reconnect_max_ms: 30000
+  subscribe_events: [book, price_change, best_bid_ask]
+  # Updates come ~every 1s. No rate limits (it's a subscription).
+
+# --- State Persistence ---
+persistence:
+  load_trades_on_restart: false  # load previous trades/balance on bot restart
+
+# --- Recording ---
+recording:
+  enabled: true
+  tick_interval_s: 5         # record ML predictions every 5s
+  record_all_markets: true   # record 0-100% (not just entry window)
+
+# ══════════════════════════════════════════════════════════════
+#  PERFORMANCE REFERENCE (live data 2026-05-07, $2 bet)
+# ══════════════════════════════════════════════════════════════
+#
+#  5min markets — TOP configs:
+#  ┌─────────────┬──────┬───────┬────┬───────┬─────────┬────────┐
+#  │ Model       │ Conf │ SP≤   │  N │ WR    │ PnL     │ EV     │
+#  ├─────────────┼──────┼───────┼────┼───────┼─────────┼────────┤
+#  │ xgboost     │ 75%  │ $0.60 │199 │ 89.9% │ $+358   │ $+1.80 │ ← ACTIVE
+#  │ catboost    │ 95%  │ $0.60 │ 83 │ 94.0% │ $+153   │ $+1.85 │
+#  │ rf          │ 75%  │ $0.60 │203 │ 89.2% │ $+355   │ $+1.75 │
+#  │ ensemble    │ 80%  │ $0.60 │198 │ 88.9% │ $+347   │ $+1.75 │
+#  └─────────────┴──────┴───────┴────┴───────┴─────────┴────────┘
+#
+#  Bet size projections (xgboost 75% ≤$0.60):
+#    $2 → $+358 | $5 → $+895 | $10 → $+1,790 | $20 → $+3,580
+#
+#  15min markets (separate config needed if enabling):
+#    xgboost 75% SP≤$0.55 0-100% → 63t, 84.1% WR, $+125, EV $+1.99

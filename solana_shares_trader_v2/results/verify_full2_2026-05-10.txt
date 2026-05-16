@@ -1,0 +1,7 @@
+﻿python : C:\Users\Administrator\AppData\Local\Programs\Python\Python313\python.exe: can't open file 'D:\\AF\\solana_shares_trader_v2\\verify_full2.py': [Errno 2] No such file or directory
+At line:1 char:1
++ python verify_full2.py 2>&1 | Out-File -FilePath results/verify_full2 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\Admini...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

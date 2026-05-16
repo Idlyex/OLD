@@ -1,0 +1,20 @@
+{
+  "session_id": "2026-05-13_16-52-53",
+  "started_at": "2026-05-13T16:52:53.921580",
+  "dry_run": false,
+  "model_source": "hermes",
+  "primary_model": "catboost",
+  "min_confidence": 0.85,
+  "max_share_price": 0.55,
+  "min_share_price": 0.4,
+  "streak_required": 2,
+  "streak_interval_s": 5,
+  "gap_min_pct": 0.03,
+  "order_size": 2.85,
+  "max_positions": 5,
+  "trade_slugs": [
+    "sol-updown-5m",
+    "sol-updown-15m"
+  ],
+  "entry_window": "0%-95%"
+}
